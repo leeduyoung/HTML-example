@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--헤드에 포함될 것들
+	1.meta
+	2.title
+	-->
+	<meta name="description" content="생활코딩 프로그래밍 수업"/>
+	<meta name="keywords" content="생활코딩, html, head, meta"/>
+	<meta charset = 'utf-8'>
+	<!--
+	<meta http-equiv="refresh" content="2; url=http://naver.com"/>
+	-->
+	<title>Head 예제</title>
+</head>
+<body>
+	<!--./현재 폴더(상대경로)-->
+	<form action="./body.html" method='GET'>
+		아이디 :
+		<input type="text" name="id" />
+		<br/>
+		비밀번호 :
+		<input type="password" name="password"/>
+		<br/>
+		<!--화면상에 표시되지 않는 컨트롤 생성
+		서버로 전달할 데이터이지만 사용자에게 노출될 필요가 없는 데이터의 경우
+		사용한다.-->
+		<input type="hidden" name="language"/>
+
+		자기소개 :
+		<textarea rows="5" cols="20"></textarea>
+		<br/>
+		<input type="submit" value="전송"/>
+	</form>
+</body>
+</html>
