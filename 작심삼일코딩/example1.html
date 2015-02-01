@@ -1,0 +1,56 @@
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>example1</title>
+	<style type="text/css">
+		h1{
+			border-bottom: 1px solid gray;
+			padding: 50px;
+			margin: 0px;
+		}
+		nav{
+			float: left;
+			border-right: 1px solid gray;
+			margin-right: 30px;
+			padding: 20px;
+			height: 500px
+		}
+		article{
+			
+		}
+		body.dark{
+			/*색상 반전*/
+			background-color: black;
+			color:white;
+		}
+	</style>
+</head>
+<body id='root' class='dark'>
+	<!--제목을 나타내는 태그 h1-->
+	<h1>JavaScript</h1>
+
+	<!--navigation태그-->
+	<nav>
+		<ol>
+			<li>JavaScript란?</li>
+			<li>변수와 상수</li>
+			<li>연산자</li>
+			<li>이벤트</li>
+		</ol>
+	</nav>
+
+	<!--본문을 나타내는 태그-->
+	<article>
+		<h2>JavaScript란?</h2>
+		
+		<div>
+			자바스크립트란 무엇인지 알기 위해선 네이버를 찾아보라.
+		</div>
+		<br/>
+		<!--onclick의 속성값은 자바스크립트이다.(코드가 들어가면됨)-->
+		<!--버튼을 눌렀을때 화면색상 반적 시킬 이벤트-->
+		<input type="button" value="white" onclick='document.getElementById('root').setAttribute('class', ' ');'/>
+		<input type="button" value="black" onclick='document.getElementById('root').setAttribute('class', 'dark');'/>
+	</article>
+</body>
+</html>
