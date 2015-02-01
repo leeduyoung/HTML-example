@@ -49,8 +49,9 @@
 		<br/>
 		<!--onclick의 속성값은 자바스크립트이다.(코드가 들어가면됨)-->
 		<!--버튼을 눌렀을때 화면색상 반적 시킬 이벤트-->
-		<input type="button" value="white" onclick='document.getElementById('root').setAttribute('class', ' ');'/>
-		<input type="button" value="black" onclick='document.getElementById('root').setAttribute('class', 'dark');'/>
+		<input type="button" value="white" onclick="document.getElementById('root').setAttribute('class', ' ');"/>
+		<input type="button" value="black" onclick="document.getElementById('root').setAttribute('class', 'dark');"/>
+		<input type="text" onblur="alert('blur');" />
 	</article>
 </body>
 </html>
