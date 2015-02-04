@@ -112,8 +112,46 @@ ex)
 
 >mysql_fetch_array를 또 하면 다음 레코드 값이 출력된다. 즉 for문으로 쭉 뽑아와야한다. 혹은 while
 
+ex2) 테이블에 있는 내용을 하나하나 꺼낸 구문
+<html>
+<body>
+<?php
+        mysql_connect('127.0.0.1', 'root', '111111');
+        mysql_select_db('leeu');
+        $result = mysql_query('SELECT * FROM topic');
+
+        while($row = mysql_fetch_array($result)){
+                var_dump($row);
+        }
+?>
+</body>
+</html>
+
+>mysql_fetch_array()값이 false가 아닐때는 while 안에 문장이 수행된다.
+리턴한 값은 row란 변수에 들어간다.
+
+ex3) 테이블에 있는 내용을 리스트로 표현해보겠다.
+<html>
+<body>
+<ol>
+<?php
+        mysql_connect('127.0.0.1', 'root', '111111');
+        mysql_select_db('leedu');
+        $result = mysql_query('SELECT * FROM topic');
+
+        while($row = mysql_fetch_array($result)){
+                echo '<li>'.$row['title'].'</li>';
+        }
+?>
+</ol>
+</body>
+</html>
 
 
+ex4) 입력값을 받아서 출력하는것
+<?php
+        echo $_GET['id'];
+?>
 
 
 
