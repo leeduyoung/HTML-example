@@ -1,0 +1,69 @@
+<mysql>
+
+Terminal
+
+$ : mysql -uroot -p111111 -hlocalhost
+	mysql 루트 계정으로 들어간다.
+	-p pasword입력
+	-h호스트 / localhost자기자신을 가르킨다.
+	(서버가 다른컴퓨터에 있다면 localhost대신 다른 아이피가 쓰일것이다. 혹은 도메인
+mysql > CREATE DATABASE leedu CHARACTER SET utf8 COLLATE utf8_general_ci;
+	database생성한다.
+mysql > show databases;
+	database에 생성된 데이터베이스 목록이 나온다.
+mysql > use leadu;
+	leedu데이터베이스를 사용하겠다.
+
+[참고]
+MySQL Error> 2002: Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (13)
+
+이 에러는  mysql_real_connect()에 host로 "localhost"를 넣는 경우 발생한다.
+이럴 때는 host에 "localhost"대신에 "127.0.0.1"을 넣으면 문제가 해결된다.
+
+//테이블 만들기
+
+mysql > CREATE TABLE topic (
+    id  int(11) NOT NULL AUTO_INCREMENT,
+    title  varchar(255) NOT NULL ,
+    description  text NULL ,
+    created  datetime NOT NULL ,
+    PRIMARY KEY (id)
+);
+
+//데이터 추가하기(insert, update, delete, select)
+mysql> INSERT INTO topic (title, description, created) 
+    -> VALUES ('about html', 'html html html', now());
+
+//데이터 확인
+mysql> SELECT *FROM topic;
+
+//데이터 가져오기
+mysql> select * from topic where id=2;
+
+//데이터 삭제하기
+mysql> delete from topic where id = 2;
+
+//내림차순
+mysql> select id, title from topic order by id desc; (ascending)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

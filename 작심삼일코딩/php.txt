@@ -1,0 +1,146 @@
+<php>
+
+1. php에서는 변수명 앞에 $를 표시해야 한다.
+
+2. <?php
+	function test(){
+		echo 1;
+	}	
+	test();
+   ?>
+  ——>결과는 1
+
+3. 에디터에서 작업하다가 컨트롤+z 누르면 백그라운드로 넘김
+   다시 fg 입력하고 엔터치면 포그라운드로 나옴
+
+4. 터미널에서 php php파일명.php 라고 치면 터미널상에서 php엔진을 사용해서 실행시킨것임 (결과를 출력한다.)
+
+5.함수 사용
+<?php
+        $x=1;
+        $x=2;
+        function test($arg){
+                echo $arg;
+        }
+        test('hello world');
+?>
+
+6. php에서는 문자와 문자를 더할때 +쓰면 안되고 .을 써야한다. 숫자끼리는 +를 사용한다.
+
+<?php
+        $x=1;
+        $x=2;
+        function test($arg){
+                echo '*'.$arg.'*<br/>';
+        }
+        test('hello world');
+        test('coding everybody');
+?>
+
+7. 입력값을 두개 줄때는?
+<?php
+        $x=1;
+        $x=2;
+        function test($arg, $arg2){
+                echo '*'.$arg.'*<br/>';
+                echo '*'.$arg2.'*<br/>';
+        }
+        test('hello world', 'haha');
+?>
+
+8. 리턴하는 법
+<?php
+        $x=1;
+        $x=2;
+        function test($arg, $arg2){
+                echo '*'.$arg.'*<br/>';
+                echo '*'.$arg2.'*<br/>';
+                return $arg.'------'.$arg2.'<br/>';
+        }
+        $arguments = test('hello world', 'haha');
+        echo $arguments;
+        
+?>
+
+9. 서버에서 php파일의 코드에 터미널에서 mysql접속할때 사용한
+   mysql -uroot -p111111 -h127.0.0.1을 입력하면 프로그램으로 접속이 가능하다.
+   (모든 클라이언트는 똑같이 접속해야 한다.)
+
+10. php를 통해 mysql에 접속하는 방법
+//터미널에서
+mysql -uroot -p111111 -h127.0.0.1
+use leedu
+select * from topic;
+
+//php에서
+<html>
+<body>
+        <?php
+                mysql_connect('127.0.0.1', 'root', '111111');
+                mysql_select_db('leedu');
+                mysql_query('SELECT * FROM topic');
+		$row = mysql_fetch_array($result);
+		//var_dump($row);
+		print_r($row);
+        ?>
+</body>
+</html>
+
+
+//mysql_fetch_array()라는 함수를 통해서 데이터베이스의 데이터를 php가 이해하기쉽게 배열로 받는다.
+//var_dump()함수는 인자로 받은 배열을 사람이 보기좋게 보여준다. print_r()도 마찬가지
+
+ex)
+<html>
+<body>
+        <?php
+                mysql_connect('127.0.0.1', 'root', '111111');
+                mysql_select_db('leedu');
+                $result =  mysql_query('SELECT id, title FROM topic');
+                $row = mysql_fetch_array($result);
+                print_r($row);
+                echo '<br/>';
+                echo 'id : '.$row[0].'<br/> title : '.$row[1].'<br/>';
+                echo $row['title']; 
+
+                $row = mysql_fetch_array($result);
+                print_r($row);
+
+        ?>
+</body>
+</html>
+
+>mysql_fetch_array를 또 하면 다음 레코드 값이 출력된다. 즉 for문으로 쭉 뽑아와야한다. 혹은 while
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

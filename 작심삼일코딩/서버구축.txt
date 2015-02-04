@@ -9,6 +9,7 @@ $ : sudo apt-get install apache2;
 	http://ec2-54-92-91-164.ap-northeast-1.compute.amazonaws.com/index.html
 	/index전까지는 호스트이고, index.html은 /var/www에 있는 파일이다.(기본디렉터리)
 $ : sudo mkdir /var/www/html 
+	/var/www/html 위치에 html문서가 들어간다. (경로)
 $ : sudo nano zacsim.html
 	nano는 서버에 깔려있는 편집 에디터이다.
 
