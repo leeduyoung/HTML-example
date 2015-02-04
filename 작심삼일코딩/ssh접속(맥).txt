@@ -1,0 +1,18 @@
+
+먼저 ot.pem이 있는 파일로 위치를 이동한다. (cd사용)
+
+1. sudo chmod 600 ot.pem : ot.pem 파일을 소유자가 읽고 쓸수있게 모드를 체인지 한다.
+	패스워드를 보호한다.
+2. 이 운영체제에는 여러명의 사용자가 사용할 수 있다. (해당 파일은 소유자인 나만 볼 수 있다.)
+
+3. ssh -i ot.pem ubuntu@ec2-54-92-91-164.ap-northeast-1.compute.amazonaws.com
+
+	sudo : 관리자 권한으로 실행 (생략)
+	ssh : ssh를 가동하겠다.
+	-i : 비밀번호 파일을 쓰겠다고 지정한 것.
+	ot.pem : 비밀번호가 담겨 있는 파일을 제출한다.
+	ubuntu@ : ubuntu라는 계정으로 호스트에 접속 하겠다.
+	ec2-54-92-91-164.ap-northeast-1.compute.amazonaws.com : 주소입력
+
+4. 접속이 완료 된다.
+
